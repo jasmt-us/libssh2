@@ -38,7 +38,10 @@
 
 #include "libssh2_priv.h"
 #ifdef LIBSSH2_HAVE_ZLIB
-# include <zlib.h>
+	#ifdef WIN32
+		#define ZLIB_WINAPI
+	#endif
+	#include <zlib.h>
 #endif
 
 #include "comp.h"
